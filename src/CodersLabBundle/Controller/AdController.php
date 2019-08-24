@@ -46,6 +46,11 @@ class AdController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $ad->addUser($this->getUser());
+
+//            dump($ad);die;
+
+            $ad->setUser($this->getUser());
             $em->persist($ad);
             $em->flush();
 

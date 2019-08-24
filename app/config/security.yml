@@ -21,6 +21,7 @@ security:
     #     - { path: ^/register, role: IS_AUTHENTICETED_ANONYMOUSLY }
     #     - { path: ^/logout, role: IS_AUTHENTICETED_ANONYMOUSLY }
     #    - { path: ^/resetting, role: IS_AUTHENTICETED_ANONYMOUSLY }
+        - { path: ^/ad/new, role: ROLE_USER }
         - { path: ^/admin/, role: ROLE_ADMIN }
 
     encoders:

@@ -13,13 +13,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Category
 {
-    /**
-    * @ORM\OneToMany(targetEntity="Ad", mappedBy="category")
-    */
-    private $ad;
-    public function __construct(){
-        $this->ad=new ArrayCollection();
-    }
+
+
+
 
     /**
      * @var int
@@ -30,6 +26,16 @@ class Category
      */
     private $id;
 
+    /**
+     * @var string
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ad", mappedBy="category")
+     */
+    private $ad;
 
     /**
      * Get id
@@ -40,18 +46,17 @@ class Category
     {
         return $this->id;
     }
-    /**
-     * @var string
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
 
+
+    public function __construct(){
+        $this->ad=new ArrayCollection();
+    }
 
    /**
      * Set name
      *
      * @param string $name
-     * @return Comment
+     * @return Category
      */
     public function setName($name)
     {
@@ -69,4 +74,6 @@ class Category
     {
         return $this->name;
     }
+
+
 }

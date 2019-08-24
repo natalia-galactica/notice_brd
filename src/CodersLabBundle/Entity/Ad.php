@@ -31,8 +31,24 @@ class Ad
     private $comment;
     
     public function __construct() {
-    $this->comment = new ArrayCollection();
-}
+        $this->comment = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * @param mixed $comment
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
 
     /**
      * @var int
@@ -70,21 +86,6 @@ class Ad
      * @ORM\Column(name="expiration_date", type="datetime")
      */
     private $expirationDate;
-    
-    /**
-     * @var \int
-     *
-     * @ORM\Column(name="category_id", type="integer")
-     */
-    private $category_id;
-
-    
-    /**
-     * @var \int
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     */
-    private $user_id;
 
     /**
      * Get id
@@ -187,31 +188,28 @@ class Ad
     {
         return $this->expirationDate;
     }
-    
-    public function getCategory(){
-        return $this->category_id;
+
+    public function getCategory(): ?Category{
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category){
+        $this->category = $category;
+
+        return $this;
     }
     
     public function getUser(){
-        return $this->user_id;
+        return $this->user;
     }
     
     public function addUser($user){
+        return $this->setUser($user);
+    }
+
+    public function setUser(User $user): Ad{
         $this->user = $user;
+        return $this;
     }
-    
-    public function removeUser(){
-        
-    }
-    
-    public function setUser(){
-        
-    }
-    
-    public function user(){
-        
-    }
-    
-    public function __set($name, $val){
-    }
+
 }
