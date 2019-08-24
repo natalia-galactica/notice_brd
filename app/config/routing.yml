@@ -1,0 +1,31 @@
+coders_lab_ad:
+    resource: "@CodersLabBundle/Controller/AdController.php"
+    type:     annotation
+
+coders_lab_user:
+    resource: "@CodersLabBundle/Controller/UserController.php"
+    type:     annotation
+
+coders_lab_category:
+    resource: "@CodersLabBundle/Controller/CategoryController.php"
+    type:     annotation
+
+coders_lab_comment:
+    resource: "@CodersLabBundle/Controller/CommentController.php"
+    type:     annotation
+
+coders_lab_ad:
+    resource: "@CodersLabBundle/Controller/AdController.php"
+    type:     annotation
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+coders_lab:
+    resource: "@CodersLabBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+
