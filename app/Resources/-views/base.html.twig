@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tablica Ogłoszeń </title>
+        <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700&display=swap&subset=latin-ext" rel="stylesheet">
+        <style>
+        html {
+            font-size:16px;
+            font-family: 'Khand', sans-serif;
+        }
+
+        form {
+            background: linear-gradient(140deg, rgb(8, 96, 138) 0%, rgba(30,182,77,1) 37%, rgba(0,212,255,1) 100%);
+            padding:1em;
+            font-size:1.3em;
+            font-family: 'Khand', sans-serif;
+        }
+        #coderslabbundle_ad > div {
+            font-family: 'Khand', sans-serif;
+            background: transparent!important;
+        }
+        #coderslabbundle_ad_expirationDate {
+            background: transparent!important;
+        }
+        #coderslabbundle_ad_expirationDate > div {
+            background: transparent!important;
+            padding: 20px;
+            margin: 0;
+            line-height: 20px;
+        }
+        label {
+            font-size: 18px;
+            padding: 0 20px 0 0;
+        }
+        input[type="submit" i] {
+            padding: 10px;
+            background: #2b6089;
+            color: #fff;
+            border: 0;
+        }
+        a:-webkit-any-link {
+            font-weight: 900;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .sf-toolbar {
+            background: #cfcfcf!important;
+        }
+        </style>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

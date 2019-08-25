@@ -26,18 +26,9 @@ class AdController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $ads = $em->getRepository('CodersLabBundle:Ad')->findAll();
-        
-        $loggedUser = $this->get('security.token_storage')->getToken()->getUser();
-        if (is_object($loggedUser)){
-            $loggedUserId = $loggedUser->getId();
-        } else {
-            $loggedUserId = null;
-        }
-        //var_dump();
 
         return $this->render('ad/index.html.twig', array(
             'ads' => $ads,
-            'loggedUserId' => $loggedUserId
         ));
     }
 
@@ -56,12 +47,6 @@ class AdController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $ad->addUser($this->getUser());
-            $ad->setDisplayCounter();
-            
-            $loggedUser = $this->get('security.token_storage')->getToken()->getUser();
-            if (is_object($loggedUser)){
-                $ad->setUserId($loggedUser->getId());
-            }
 
 //            dump($ad);die;
 
@@ -87,13 +72,7 @@ class AdController extends Controller
     public function showAction(Ad $ad)
     {
         $deleteForm = $this->createDeleteForm($ad);
-        
-        $ad->incrementDisplayCounter(); //increment display counter 
-        $em = $this->getDoctrine()->getManager(); 
-        $em->persist($ad); 
-        $em->flush(); //save display counter 
-        
-        
+
         return $this->render('ad/show.html.twig', array(
             'ad' => $ad,
             'delete_form' => $deleteForm->createView(),
@@ -108,16 +87,6 @@ class AdController extends Controller
      */
     public function editAction(Request $request, Ad $ad)
     {
-        $loggedUser = $this->get('security.token_storage')->getToken()->getUser();
-        if (is_object($loggedUser)){
-            $loggedUserId = $loggedUser->getId();
-        } else {
-            $loggedUserId = null;
-        }
-        if ($ad->getUserId() != $loggedUserId){
-            echo 'acess danied';
-            die();
-        }
         $deleteForm = $this->createDeleteForm($ad);
         $editForm = $this->createForm('CodersLabBundle\Form\AdType', $ad);
         $editForm->handleRequest($request);
@@ -127,7 +96,7 @@ class AdController extends Controller
 
             return $this->redirectToRoute('ad_edit', array('id' => $ad->getId()));
         }
-        
+
         return $this->render('ad/edit.html.twig', array(
             'ad' => $ad,
             'edit_form' => $editForm->createView(),

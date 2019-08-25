@@ -72,13 +72,6 @@ class Ad
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     */
-    private $userId;
 
     /**
      * @var string
@@ -93,13 +86,6 @@ class Ad
      * @ORM\Column(name="expiration_date", type="datetime")
      */
     private $expirationDate;
-    
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="display_counter", type="integer")
-     */
-    private $displayCounter;
 
     /**
      * Get id
@@ -224,31 +210,6 @@ class Ad
     public function setUser(User $user): Ad{
         $this->user = $user;
         return $this;
-    }
-    
-    public function getDisplayCounter()
-    {
-        return $this->displayCounter;
-    }
-    
-    public function setDisplayCounter()
-    {
-        $this->displayCounter = 0;
-    }
-    
-    public function incrementDisplayCounter()
-    {
-        $this->displayCounter = $this->displayCounter + 1;
-    }
-    
-    public function getUserId()
-    {
-        return $this->userId;
-    }
-    
-    public function setUserId($id)
-    {
-        $this->userId = $id;
     }
 
 }

@@ -13,9 +13,117 @@
             padding:1em;
             font-size:1.3em;
         }
-        </style
+		
+html {
+		  font-size:16px;
+      }
+
+      div {
+        background-color:#d4d4d4;
+        font-size:1.3em;
+		font-family: 'Khand', sans-serif;
+      }
+	h1 {
+		position: relative;
+		width: 100%;
+		padding-top: 40px;
+		background: linear-gradient(140deg, rgb(8, 96, 138) 0%, rgba(30,182,77,1) 37%, rgba(0,212,255,1) 100%);
+		border-bottom: 7px solid #70d685;
+		font-weight: 400;
+		box-shadow: 0px -1px 22px #000;
+		color: #eee!important;
+		font-size: 26px;
+		line-height: 20px;
+		text-shadow: 1px 1px 4px #1d1d1d;
+		margin: 0!important;
+		font-family: 'Khand', sans-serif!important;
+	}
+	center {
+		background: linear-gradient(rgb(191, 191, 191) 0%, rgb(216, 214, 214) 37%, rgb(247, 247, 247) 100%);
+		}
+	center a {
+		text-shadow: 1px 1px 4px #1d1d1d;
+		border: 0!important;
+		border-radius: 0!important;
+		color: #fff;
+		line-height: 20px;
+		font-weight: 600;
+		font-family: 'Khand', sans-serif;
+		letter-spacing: 1px;
+		font-size: 20px;
+	}
+	  center a:hover {
+		  text-shadow: 1px 1px 4px #fff;
+		  border: 0!important;
+		  border-radius: 0!important;
+		  color: #41b7ca;
+		  text-decoration: none;
+		  font-size: 18px;
+		  line-height: 20px;
+	  }
+	  center a:selected {
+		  text-shadow: 1px 1px 4px #fff;
+		  border: 0!important;
+		  border-radius: 0!important;
+		  color: #41b7ca;
+		  text-decoration: underline;
+		  font-size: 18px;
+		  line-height: 20px;
+	  }
+	.buttons {
+		padding: 30px;
+	}
+	.sf-toolbarreset {
+	    background-color: #989898!important;
+	}
+	
+	
+	html {
+            font-size:16px;
+            font-family: 'Khand', sans-serif;
+        }
+
+        form {
+            background: linear-gradient(140deg, rgb(8, 96, 138) 0%, rgba(30,182,77,1) 37%, rgba(0,212,255,1) 100%);
+            padding:1em;
+            font-size:1.3em;
+            font-family: 'Khand', sans-serif;
+        }
+        #coderslabbundle_ad > div {
+            font-family: 'Khand', sans-serif;
+            background: transparent!important;
+        }
+        #coderslabbundle_ad_expirationDate {
+            background: transparent!important;
+        }
+        #coderslabbundle_ad_expirationDate > div {
+            background: transparent!important;
+            padding: 20px;
+            margin: 0;
+            line-height: 20px;
+        }
+        label {
+            font-size: 18px;
+            padding: 0 20px 0 0;
+        }
+        input[type="submit" i] {
+            padding: 10px;
+            background: #2b6089;
+            color: #fff;
+            border: 0;
+        }
+        a:-webkit-any-link {
+            font-weight: 900;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .sf-toolbar {
+            background: #cfcfcf!important;
+        }
+        </style>
     </head>
     <body>
+    <a href="/">[ HOME PAGE ]</a><br />
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
